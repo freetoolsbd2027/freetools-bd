@@ -1,105 +1,210 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="FreeTools BD offers free online tools including word counter, case converter, password generator, percentage calculator and image compressor.">
+<meta name="description" content="FreeTools BD - 15 free online tools for text, images, calculations and more.">
 <meta name="theme-color" content="#101827">
-<title>FreeTools BD — Free Online Tools</title>
+<title>FreeTools BD - Free Online Tools</title>
 <style>
-:root{--bg:#f4f7fb;--card:#fff;--ink:#172033;--muted:#64748b;--brand:#5b5ce2;--brand2:#16a394;--line:#e5eaf2}
-*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink)}
-header{background:#101827;color:white;padding:22px 5%;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.logo{font-size:23px;font-weight:800;letter-spacing:-.6px}.logo span{color:#79e0d2}
-nav a{color:#dbe4f0;text-decoration:none;margin-left:20px;font-size:14px}
-.hero{padding:64px 20px 48px;text-align:center;background:linear-gradient(135deg,#101827,#273c68);color:white}
-.hero h1{font-size:clamp(32px,5vw,52px);margin:0 0 12px;letter-spacing:-1.5px}.hero p{color:#d5deed;max-width:650px;margin:0 auto 24px;line-height:1.7}
-.search{width:min(560px,100%);padding:15px 18px;border:0;border-radius:12px;font-size:16px;outline:3px solid #ffffff22}
-main{max-width:1100px;margin:0 auto;padding:38px 20px 60px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:18px}.section-head h2{margin:0;font-size:25px}.section-head p{margin:5px 0 0;color:var(--muted);font-size:14px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:17px}
-.tool-card{color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:17px;padding:21px;text-align:left;cursor:pointer;transition:.18s;box-shadow:0 5px 20px #1c2b4610}
-.tool-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px #1c2b4618;border-color:#c8c9ff}
-.tool-icon{width:45px;height:45px;border-radius:13px;background:#eeefff;display:grid;place-items:center;font-size:23px;margin-bottom:14px}
-.tool-card h3{margin:0 0 7px;font-size:17px}.tool-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.55}
-.panel{display:none;background:white;border:1px solid var(--line);border-radius:18px;padding:24px;margin-top:28px;box-shadow:0 8px 30px #1c2b460c}
-.panel.active{display:block}.panel h2{margin:0 0 6px}.sub{color:var(--muted);font-size:14px;margin:0 0 20px}
-label{display:block;font-size:14px;font-weight:650;margin:14px 0 7px}
-textarea,input[type=text],input[type=number],input[type=file]{width:100%;padding:12px;border:1px solid #d8dfeb;border-radius:10px;font:inherit;background:white}
-textarea{min-height:145px;resize:vertical}
-button,.btn{border:0;border-radius:10px;padding:11px 16px;background:var(--brand);color:white;font-weight:700;cursor:pointer;margin:8px 7px 0 0}
-button.secondary{background:#e9ecf5;color:#27334a}button.green{background:var(--brand2)}
-.result{margin-top:15px;padding:14px;background:#f1f5fb;border-radius:10px;line-height:1.65;overflow-wrap:anywhere}
-.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.stat{background:#f1f5fb;padding:10px 14px;border-radius:10px;font-size:14px}
-.inline{display:flex;gap:10px;flex-wrap:wrap}.inline>*{flex:1;min-width:130px}
-.ad-slot{margin:28px 0;border:1px dashed #c7cfdd;border-radius:12px;padding:18px;text-align:center;color:#8792a5;font-size:13px;background:#fafcff}
-footer{text-align:center;padding:28px 20px;background:#101827;color:#cbd5e1;font-size:13px}footer a{color:#8de3d8}
-.note{font-size:12px;color:var(--muted);line-height:1.6}
-@media(max-width:600px){header{padding:18px 5%}nav a{margin-left:10px}.hero{padding:48px 18px 38px}.panel{padding:18px}}
+:root{--bg:#f4f7fb;--card:#fff;--ink:#172033;--muted:#64748b;--accent:#2563eb}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{background:#101827;color:white;padding:22px 16px;text-align:center}
+.logo{font-size:25px;font-weight:800}
+nav a{color:#dbe4f0;text-decoration:none;margin:0 9px}
+.hero{padding:45px 16px;text-align:center;background:#172b4d;color:white}
+.hero h1{font-size:clamp(30px,6vw,48px);margin:0 0 12px}
+.hero p{color:#dbe4f0}
+.search{width:min(560px,100%);padding:15px;border:0;border-radius:10px;font-size:16px;margin-top:15px}
+main{max-width:1100px;margin:0 auto;padding:28px 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:17px}
+.tool-card{background:var(--card);color:var(--ink);padding:20px;border-radius:14px;box-shadow:0 3px 14px #17203312}
+.tool-card h3{margin-top:0}
+.tool-card button,.action{background:var(--accent);color:white;border:0;padding:11px 15px;border-radius:8px;cursor:pointer;font-size:15px}
+.tool-card button{margin-top:8px}
+.panel{display:none;background:white;padding:22px;border-radius:14px;margin:24px 0;box-shadow:0 3px 14px #17203312}
+.panel input,.panel textarea,.panel select{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:8px;margin:8px 0 13px;font-size:16px}
+.panel textarea{min-height:100px}
+.panel button{background:var(--accent);color:white;border:0;border-radius:8px;padding:11px 16px;margin:5px;cursor:pointer}
+.result{background:#eff6ff;padding:12px;border-radius:8px;overflow-wrap:anywhere;margin-top:12px}
+footer{text-align:center;background:#101827;color:white;padding:25px;margin-top:35px}
+.small{color:var(--muted);font-size:14px}
 </style>
 </head>
 <body>
-<header><div class="logo">FreeTools <span>BD</span></div><nav><a href="#tools">Tools</a><a href="#about">About</a></nav></header>
+<header>
+<div class="logo">🛠️ FreeTools BD</div>
+<p>Free Online Tools for Everyone</p>
+<nav><a href="#tools">Tools</a> <a href="#about">About</a></nav>
+</header>
+
 <section class="hero">
-<h1>Useful tools. <span style="color:#79e0d2">Always free.</span></h1>
-<p>Simple, fast and free online tools to make your everyday work easier. No sign-up required.</p>
-<input class="search" id="search" placeholder="Search a tool..." aria-label="Search tools">
+<h1>Free Online Tools</h1>
+<p>Simple, fast and free tools for your daily needs.</p>
+<input class="search" id="search" placeholder="Search a tool..." oninput="filterTools()">
 </section>
+
 <main id="tools">
-<div class="section-head"><div><h2>Explore free tools</h2><p>Choose a tool to get started.</p></div></div>
-<div class="grid" id="toolGrid">
-<button class="tool-card" data-tool="words"><div class="tool-icon">📝</div><h3>Word Counter</h3><p>Count words, characters, sentences and paragraphs.</p></button>
-<button class="tool-card" data-tool="case"><div class="tool-icon">🔠</div><h3>Case Converter</h3><p>Convert text to uppercase, lowercase or title case.</p></button>
-<button class="tool-card" data-tool="password"><div class="tool-icon">🔐</div><h3>Password Generator</h3><p>Create a random password with your preferred length.</p></button>
-<button class="tool-card" data-tool="percent"><div class="tool-icon">％</div><h3>Percentage Calculator</h3><p>Calculate a percentage of any number.</p></button>
-<button class="tool-card" data-tool="image"><div class="tool-icon">🖼️</div><h3>Image Compressor</h3><p>Compress an image in your browser and download it.</p></button>
-</div>
-<div class="ad-slot">Advertisement space — add your approved ad code here later</div>
+<h2>All 15 Tools</h2>
+<div class="grid" id="grid"></div>
 <section class="panel" id="panel">
-<h2 id="panelTitle">Choose a tool</h2><p class="sub" id="panelDesc"></p>
-<div id="panelBody"></div>
-<button class="secondary" id="closePanel">Close tool</button>
+<h2 id="toolTitle">Tool</h2>
+<div id="toolBody"></div>
+<div id="output" class="result" style="display:none"></div>
 </section>
-<section id="about" style="margin-top:48px"><h2>About FreeTools BD</h2><p style="color:var(--muted);line-height:1.7">FreeTools BD is a collection of simple browser-based utilities. Your text and images are processed locally in your browser by these tools; they are not uploaded to our server.</p><p class="note">Disclaimer: Tools are provided for convenience. Always verify important results. This starter website does not guarantee income or AdSense approval.</p></section>
+<section id="about">
+<h2>About FreeTools BD</h2>
+<p>FreeTools BD provides useful free online tools. No registration required.</p>
+</section>
 </main>
-<footer>© <span id="year"></span> FreeTools BD · Made to be useful · <a href="mailto:hello@example.com">Contact</a></footer>
+
+<footer>
+<p>© 2026 FreeTools BD. All rights reserved.</p>
+<p>Free tools for everyone.</p>
+</footer>
+
 <script>
-const $=s=>document.querySelector(s);
-const panel=$('#panel'), body=$('#panelBody');
-$('#year').textContent=new Date().getFullYear();
-const definitions={
-words:['Word Counter','Paste or type text below to see instant statistics.'],
-case:['Case Converter','Change the capitalization of your text.'],
-password:['Password Generator','Generate a random password on this device.'],
-percent:['Percentage Calculator','Find what percentage one number is of another, or calculate a percentage of a value.'],
-image:['Image Compressor','Choose an image, compress it in your browser, then download the result.']
-};
-function openTool(key){
-  $('#panelTitle').textContent=definitions[key][0];$('#panelDesc').textContent=definitions[key][1];panel.classList.add('active');
-  if(key==='words'){
-    body.innerHTML=`<label for="wordText">Your text</label><textarea id="wordText" placeholder="Start typing or paste your text here..."></textarea><div class="stats" id="wordStats"></div>`;
-    $('#wordText').addEventListener('input',()=>{let t=$('#wordText').value;let words=t.trim()?t.trim().split(/\\s+/).length:0;let chars=t.length;let sentences=t.trim()?(t.match(/[.!?]+(?=\\s|$)/g)||[]).length:0;let paragraphs=t.trim()?t.trim().split(/\\n\\s*\\n/).length:0;$('#wordStats').innerHTML=`<div class="stat"><b>${words}</b> words</div><div class="stat"><b>${chars}</b> characters</div><div class="stat"><b>${sentences}</b> sentences</div><div class="stat"><b>${paragraphs}</b> paragraphs</div>`});
-  } else if(key==='case'){
-    body.innerHTML=`<label for="caseText">Your text</label><textarea id="caseText" placeholder="Enter text..."></textarea><button data-case="upper">UPPERCASE</button><button data-case="lower">lowercase</button><button data-case="title">Title Case</button><button class="secondary" id="copyCase">Copy result</button><div class="result" id="caseResult">Your converted text will appear here.</div>`;
-    body.querySelectorAll('[data-case]').forEach(b=>b.onclick=()=>{let t=$('#caseText').value;let mode=b.dataset.case;$('#caseResult').textContent=mode==='upper'?t.toUpperCase():mode==='lower'?t.toLowerCase():t.toLowerCase().replace(/\\b\\w/g,c=>c.toUpperCase())});
-    $('#copyCase').onclick=()=>navigator.clipboard?.writeText($('#caseResult').textContent);
-  } else if(key==='password'){
-    body.innerHTML=`<label for="passLength">Password length</label><input type="number" id="passLength" min="8" max="64" value="16"><label><input type="checkbox" id="symbols" checked> Include symbols</label><button id="makePass">Generate password</button><button class="secondary" id="copyPass">Copy password</button><div class="result" id="passResult">Your password will appear here.</div><p class="note">Use a unique password for every account. Store it in a trusted password manager.</p>`;
-    $('#makePass').onclick=()=>{let n=Math.max(8,Math.min(64,Number($('#passLength').value)||16));let chars='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'+($('#symbols').checked?'!@#$%^&*()-_=+?':'');let out='';let arr=new Uint32Array(n);crypto.getRandomValues(arr);for(let x of arr)out+=chars[x%chars.length];$('#passResult').textContent=out};
-    $('#copyPass').onclick=()=>navigator.clipboard?.writeText($('#passResult').textContent);
-    $('#makePass').click();
-  } else if(key==='percent'){
-    body.innerHTML=`<div class="inline"><div><label for="pct">Percentage (%)</label><input type="number" id="pct" value="15"></div><div><label for="base">Number</label><input type="number" id="base" value="200"></div></div><button id="calcPct">Calculate</button><div class="result" id="pctResult">15% of 200 = 30</div><hr style="border:0;border-top:1px solid #e5eaf2;margin:22px 0"><div class="inline"><div><label for="part">Part</label><input type="number" id="part" value="25"></div><div><label for="whole">Whole</label><input type="number" id="whole" value="100"></div></div><button id="calcRatio">Find percentage</button><div class="result" id="ratioResult">25 is 25% of 100</div>`;
-    $('#calcPct').onclick=()=>$('#pctResult').textContent=`${$('#pct').value}% of ${$('#base').value} = ${(Number($('#pct').value)*Number($('#base').value)/100).toLocaleString()}`;
-    $('#calcRatio').onclick=()=>{let w=Number($('#whole').value);$('#ratioResult').textContent=w===0?'Whole number cannot be zero.':`${$('#part').value} is ${(Number($('#part').value)/w*100).toFixed(2)}% of ${w}`};
-  } else if(key==='image'){
-    body.innerHTML=`<label for="imageFile">Choose image</label><input type="file" id="imageFile" accept="image/*"><div class="inline"><div><label for="quality">JPEG quality (0.1–1)</label><input type="number" id="quality" min="0.1" max="1" step="0.1" value="0.7"></div></div><button id="compress" disabled>Compress image</button><div id="imageResult" class="result">Choose an image to begin.</div>`;
-    let img=null;$('#imageFile').onchange=e=>{let f=e.target.files[0];if(!f)return;let url=URL.createObjectURL(f);img=new Image();img.onload=()=>{$('#imageResult').textContent=`Selected: ${f.name} · ${(f.size/1024).toFixed(1)} KB · ${img.width}×${img.height}`;$('#compress').disabled=false};img.src=url};
-    $('#compress').onclick=()=>{if(!img)return;let c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);let q=Math.max(.1,Math.min(1,Number($('#quality').value)||.7));c.toBlob(blob=>{if(!blob)return;let url=URL.createObjectURL(blob);let a=document.createElement('a');a.href=url;a.download='compressed-image.jpg';a.textContent='Download compressed image';a.className='btn';let old=$('#imageResult');old.innerHTML=`Original: ${( $('#imageFile').files[0].size/1024).toFixed(1)} KB<br>Compressed: ${(blob.size/1024).toFixed(1)} KB<br>`;old.appendChild(a)},'image/jpeg',q)};
-  }
-  panel.scrollIntoView({behavior:'smooth',block:'start'});
+const tools=[
+["Word Counter","Count words and characters","word"],
+["Case Converter","Convert text case","case"],
+["Password Generator","Generate a secure password","password"],
+["Percentage Calculator","Calculate percentages","percent"],
+["Image Compressor","Compress an image","image"],
+["Text Reverser","Reverse your text","reverse"],
+["Remove Extra Spaces","Clean unnecessary spaces","spaces"],
+["URL Encoder / Decoder","Encode or decode URLs","url"],
+["JSON Formatter","Format JSON data","json"],
+["Age Calculator","Calculate your age","age"],
+["BMI Calculator","Calculate body mass index","bmi"],
+["Tip Calculator","Calculate tips and total bill","tip"],
+["Loan EMI Calculator","Calculate monthly loan payment","emi"],
+["Unit Converter","Convert common units","unit"],
+["Date Difference","Find days between two dates","date"]
+];
+
+const grid=document.getElementById("grid");
+tools.forEach(t=>{
+const card=document.createElement("div");
+card.className="tool-card";
+card.dataset.name=t[0].toLowerCase();
+card.innerHTML=`<h3>${t[0]}</h3><p class="small">${t[1]}</p><button onclick="openTool('${t[2]}')">Open Tool</button>`;
+grid.appendChild(card);
+});
+
+function filterTools(){
+const q=document.getElementById("search").value.toLowerCase();
+document.querySelectorAll(".tool-card").forEach(c=>{
+c.style.display=c.dataset.name.includes(q)?"block":"none";
+});
 }
-document.querySelectorAll('[data-tool]').forEach(b=>b.addEventListener('click',()=>openTool(b.dataset.tool)));
-$('#closePanel').onclick=()=>panel.classList.remove('active');
-$('#search').addEventListener('input',e=>{let q=e.target.value.toLowerCase();document.querySelectorAll('.tool-card').forEach(c=>c.style.display=c.innerText.toLowerCase().includes(q)?'block':'none')});
+function field(id,label,type="text",placeholder=""){
+return `<label>${label}</label><input id="${id}" type="${type}" placeholder="${placeholder}">`;
+}
+function area(id,label,placeholder="Enter text here"){
+return `<label>${label}</label><textarea id="${id}" placeholder="${placeholder}"></textarea>`;
+}
+function showResult(value){
+const o=document.getElementById("output");
+o.style.display="block";
+o.textContent=value;
+}
+function val(id){return document.getElementById(id).value}
+function openTool(id){
+const panel=document.getElementById("panel"),body=document.getElementById("toolBody");
+panel.style.display="block";
+document.getElementById("output").style.display="none";
+document.getElementById("toolTitle").textContent=tools.find(t=>t[2]===id)[0];
+let html="",run="";
+
+if(id==="word"){
+html=area("txt","Your text");
+run=()=>{let s=val("txt");showResult("Words: "+(s.trim()?s.trim().split(/\s+/).length:0)+" | Characters: "+s.length+" | Characters without spaces: "+s.replace(/\s/g,"").length)};
+}
+if(id==="case"){
+html=area("txt","Your text")+`<button onclick="showResult(val('txt').toUpperCase())">UPPERCASE</button><button onclick="showResult(val('txt').toLowerCase())">lowercase</button><button onclick="showResult(val('txt').replace(/\\b\\w/g,c=>c.toUpperCase()))">Title Case</button>`;
+}
+if(id==="password"){
+html=field("len","Password length","number","16")+`<button onclick="makePassword()">Generate Password</button>`;
+}
+if(id==="percent"){
+html=field("num","What is the percentage?","number","20")+field("of","Of which number?","number","500");
+run=()=>showResult("Result: "+(Number(val("num"))/100*Number(val("of"))));
+}
+if(id==="image"){
+html=`<label>Select image</label><input id="img" type="file" accept="image/*"><label>Quality (0.1 to 1)</label><input id="quality" type="number" min="0.1" max="1" step="0.1" value="0.7"><button onclick="compressImage()">Compress Image</button><p class="small">The compressed image will be downloaded to your device.</p>`;
+}
+if(id==="reverse"){
+html=area("txt","Your text");
+run=()=>showResult(val("txt").split("").reverse().join(""));
+}
+if(id==="spaces"){
+html=area("txt","Your text");
+run=()=>showResult(val("txt").trim().replace(/\s+/g," "));
+}
+if(id==="url"){
+html=area("txt","Text or URL")+`<button onclick="showResult(encodeURIComponent(val('txt')))">Encode</button><button onclick="decodeURL()">Decode</button>`;
+}
+if(id==="json"){
+html=area("txt","Paste JSON here")+`<button onclick="formatJSON()">Format JSON</button>`;
+}
+if(id==="age"){
+html=field("birth","Date of birth","date");
+run=()=>{let d=new Date(val("birth"));if(!val("birth")||isNaN(d))return showResult("Please enter a valid date.");let n=new Date();if(d>n)return showResult("Birth date cannot be in the future.");let y=n.getFullYear()-d.getFullYear(),m=n.getMonth()-d.getMonth(),day=n.getDate()-d.getDate();if(day<0){m--;day+=new Date(n.getFullYear(),n.getMonth(),0).getDate()}if(m<0){y--;m+=12}showResult(`Your age: ${y} years, ${m} months, ${day} days.`)};
+}
+if(id==="bmi"){
+html=field("weight","Weight (kg)","number","60")+field("height","Height (cm)","number","170");
+run=()=>{let w=Number(val("weight")),h=Number(val("height"))/100;if(w<=0||h<=0)return showResult("Enter valid weight and height.");let b=w/(h*h);showResult("Your BMI: "+b.toFixed(1))};
+}
+if(id==="tip"){
+html=field("bill","Bill amount","number","1000")+field("tip","Tip percentage","number","10")+field("people","Number of people","number","2");
+run=()=>{let b=Number(val("bill")),t=Number(val("tip")),p=Number(val("people"));if(b<0||p<=0)return showResult("Enter valid values.");let extra=b*t/100;showResult("Tip: "+extra.toFixed(2)+" | Total: "+(b+extra).toFixed(2)+" | Per person: "+((b+extra)/p).toFixed(2))};
+}
+if(id==="emi"){
+html=field("loan","Loan amount","number","100000")+field("rate","Annual interest rate (%)","number","10")+field("months","Loan duration (months)","number","12");
+run=()=>{let p=Number(val("loan")),r=Number(val("rate"))/1200,n=Number(val("months"));if(p<=0||n<=0||r<0)return showResult("Enter valid values.");let e=r===0?p/n:p*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);showResult("Monthly EMI: "+e.toFixed(2)+" | Total payment: "+(e*n).toFixed(2))};
+}
+if(id==="unit"){
+html=`<label>Conversion</label><select id="conversion"><option value="km">Kilometers to Miles</option><option value="mi">Miles to Kilometers</option><option value="kg">Kilograms to Pounds</option><option value="lb">Pounds to Kilograms</option><option value="cm">Centimeters to Inches</option><option value="in">Inches to Centimeters</option><option value="c">Celsius to Fahrenheit</option><option value="f">Fahrenheit to Celsius</option></select>`+field("amount","Enter value","number","10");
+run=()=>{let x=Number(val("amount")),type=val("conversion"),r=x;if(type==="km")r=x*0.621371;if(type==="mi")r=x/0.621371;if(type==="kg")r=x*2.20462;if(type==="lb")r=x/2.20462;if(type==="cm")r=x/2.54;if(type==="in")r=x*2.54;if(type==="c")r=x*9/5+32;if(type==="f")r=(x-32)*5/9;showResult("Converted value: "+r.toFixed(3))};
+}
+if(id==="date"){
+html=field("date1","Start date","date")+field("date2","End date","date");
+run=()=>{let a=new Date(val("date1")),b=new Date(val("date2"));if(!val("date1")||!val("date2")||isNaN(a)||isNaN(b))return showResult("Please select both dates.");showResult("Difference: "+Math.abs(Math.round((b-a)/86400000))+" days.")};
+}
+body.innerHTML=html;
+if(run){let b=document.createElement("button");b.textContent="Calculate";b.onclick=run;body.appendChild(b)}
+panel.scrollIntoView({behavior:"smooth"});
+}
+function makePassword(){
+let n=Math.max(4,Math.min(128,Number(val("len"))||16));
+let chars="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+let s="";for(let i=0;i<n;i++)s+=chars[Math.floor(Math.random()*chars.length)];
+showResult(s);
+}
+function decodeURL(){try{showResult(decodeURIComponent(val("txt")))}catch(e){showResult("Invalid encoded URL.")}}
+function formatJSON(){try{showResult(JSON.stringify(JSON.parse(val("txt")),null,2))}catch(e){showResult("Invalid JSON. Please check your data.")}}
+function compressImage(){
+let f=document.getElementById("img").files[0];
+if(!f)return showResult("Please select an image first.");
+let q=Math.max(.1,Math.min(1,Number(val("quality"))||.7));
+let reader=new FileReader();
+reader.onload=e=>{
+let img=new Image();
+img.onload=()=>{
+let c=document.createElement("canvas");c.width=img.width;c.height=img.height;
+c.getContext("2d").drawImage(img,0,0);
+c.toBlob(blob=>{
+if(!blob)return showResult("Could not compress this image.");
+let a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="compressed-image.jpg";a.click();
+showResult("Original size: "+(f.size/1024).toFixed(1)+" KB | Compressed size: "+(blob.size/1024).toFixed(1)+" KB");
+},"image/jpeg",q);
+};
+img.src=e.target.result;
+};
+reader.readAsDataURL(f);
+}
 </script>
-</body></html>
+</body>
+</html>
